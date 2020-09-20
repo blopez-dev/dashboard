@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, ReactElement } from 'react'
 
 interface Item {
   title: string,
   date: Date,
 }
 
+const array: Array<Item | string> = [{ title: '123', date: new Date() }, 'hola', 'que', 'tal']
+
 interface Props {
-  list: Array<Item>
+  list: Array<Item | string> // Array<Item> || Array<string> || Array<number> || Array<Object> || Array<any>
 }
 
-function List({ list }: Props) {
+function List({ list }: Props): ReactElement {
 
     return (
         <div>
